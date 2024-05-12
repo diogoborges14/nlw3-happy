@@ -1,0 +1,23 @@
+{
+    "name": "happy",
+    "version": "1.0.0",
+    "description": "Happy helps you to met a orphanage and make children happy",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon src/server.js"
+    },
+    "keywords": [
+        "happy",
+        "orphanage",
+        "children",
+        "donation"
+    ],
+    "author": "diogob003",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "hbs": "^4.1.2",
+        "nodemon": "^2.0.7",
+        "sqlite-async": "^1.1.1"
+    }
+}

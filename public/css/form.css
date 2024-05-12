@@ -1,0 +1,169 @@
+/* form section */
+form{
+    width: 70rem;
+    margin: 6.4rem auto;
+    background-color: white;
+    border: 1px solid #d3e2e5;
+    border-radius: 2rem;
+    overflow: hidden;
+    padding: 8rem;
+}
+form *:focus{
+    outline: none;
+    /* outline-color: #37C77F; */
+    border: 2px solid #37C77F !important;
+}
+fieldset{
+    border: 0;
+}
+/* get the fieldset when before have brother fieldset */
+fieldset + fieldset{
+    margin-top: 4rem;
+}
+fieldset legend{
+    width: 100%;
+    font-size: 3.2rem;
+    line-height: 1.5;
+    color: #5c8599;
+    font-weight: 700;
+    border-bottom: 1px solid #d3e2e5;
+    margin-bottom: 4rem;
+    padding-bottom: 2.4rem;
+}
+.validation-alert{
+    font-size: 2.7rem;
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 2rem;
+    border: 2px solid #a50505;
+    color: #a50505;
+    background-color: #fb8585;
+    margin-bottom: 1rem;
+}
+.map-container{
+    border-color:  #DDE3F0;
+}
+/* pega o .input-block que tem um irmão antes dele */
+.input-block + .input-block{
+    margin-top: 2.4rem;
+}
+.input-block label,
+.input-block .label{
+    color: #8FA7B3;
+    margin-bottom: .8rem;
+    line-height: 1.5;
+}
+.input-block label span{
+    font-size: 1.4rem;
+    margin-left: 2.4rem;
+}
+.input-block input,
+.input-block textarea,
+.input-block button,
+.input-block .weekends-choose{
+    width: 100%;
+    color: #5c8599;
+    background-color: #F5F8FA;
+    border: 1px solid #D3E2E5;
+    border-radius: 2rem;
+    height: 6.4rem;
+    padding: 0 1.6rem;
+}
+.input-block textarea{
+    height: clamp(12rem, 16rem, 24rem);
+    resize: vertical;
+    line-height: 1.5;
+}
+.input-block input:valid,
+.input-block textarea:valid{
+    border-color: #A1E9C5;
+}
+.input-block input::placeholder{
+    color: #8FA7B3;
+    font-weight: 600;
+}
+.input-block .images-upload{
+    position: relative;
+}
+.input-block .images-upload + .images-upload{ /* get the 2tn+ .images-upload */
+    margin-top: 1.2rem;
+}
+.input-block .images-upload span{
+    position: absolute;
+    width: 3.8rem;
+    height: 3.8rem;
+    border: 1px solid #D3E2E5;
+    border-radius: 1rem;
+    right: 1.2rem;
+    bottom: 1.3rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.input-block button{
+    margin-top: 1.2rem;
+    border: 1px dashed #96D2F0;
+    cursor: pointer;
+}
+/* 
+    weekends-choose 
+*/
+.input-block div.weekends-choose{
+    padding: 0;
+    height: 6.4rem;
+    border: none;
+    display: grid;
+    grid-template-columns: 0 1fr 0 1fr;
+}
+.weekends-choose label{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #D3E2E5;
+    cursor: pointer;
+}
+/* get the 1st label | same as :first-child */
+.weekends-choose label:nth-of-type(1){
+    border-radius: 2rem 0 0 2rem;
+}
+/* get the 2st label | same as :last-child */
+.weekends-choose label:nth-of-type(2){
+    border-radius: 0 2rem 2rem 0;
+}
+.weekends-choose input{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.weekends-choose input#weekends-yes:checked ~ label[for="weekends-yes"]{
+    border: 2px solid #37C77F;
+    font-size: 2rem;
+    color: #37C77F;
+    background-color: #cef9e3;
+}
+.weekends-choose input#weekends-no:checked ~ label[for="weekends-no"]{
+    border: 2px solid #df1e2fad;
+    font-size: 2rem;
+    color: #df1e2fad;
+    background-color: #FFE4EE;
+}
+.weekends-choose input#weekends-yes:not(checked) ~ label[for="weekends-yes"],
+.weekends-choose input#weekends-no:not(checked) ~ label[for="weekends-no"]{
+    border: 1px solid #D3E2E5;
+    font-size: 1.8rem;
+    color: #5C8599;
+    background-color: #F5F8FA;
+}
+
+@media (max-width: 700px){
+    form{
+        border: 0;
+        border-radius: 0;
+        width: 100vw;
+        padding: 5vw;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,106 @@
+#page-orphanage-map{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+aside{
+    width: clamp(24rem, 25vw, 44rem);
+    height: min(100%, 100vh);
+    background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%);
+    padding: clamp(4rem, 5vw, 8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+aside h2{
+    margin-top: 8rem;
+    font: 800 clamp(2rem, 5vw, 3.6rem)/1.1 'Nunito', sans-serif;
+}
+aside p{
+    margin-top: 2.4rem;
+    font: 400 1.6rem/1.5 'Nunito', sans-serif;
+}
+aside footer p{
+    margin-top: .8rem;
+}
+#mapid{
+    width: 100%;
+    height: 100%;
+    animation-delay: 200ms;
+}
+/* button */
+a.create-orphanage{
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+    z-index: 10;
+    width: 6.4rem;
+    height: 6.4rem;
+    background-color: #15C3D6;
+    border: 0;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 2.s;
+}
+a.create-orphanage:hover{
+    background-color: #17d6eb;
+}
+/* leaflet */
+.leaflet-popup-content-wrapper{
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 20px;
+}
+.leaflet-popup-content{
+    color: #0089A5;
+    margin: .8rem 1.2rem;
+    font: 700 2rem/1 'Nunito', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.leaflet-popup-content a{
+    width: 4rem;
+    height: 4rem;
+    background-color: #15C3D6;
+    box-shadow: 17.2828px 27.65px 41.48px rgba(23, 142, 166, 0.16);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .2s;
+}
+.leaflet-popup-content a:hover{
+    background-color: #17d6eb;
+}
+.leaflet-popup-tip{
+    display: none;
+}
+.leaflet-container{
+    font: 700 2rem/1 'Nunito', sans-serif;
+    z-index: 5;
+}
+/* my improvements */
+@media (max-width: 700px){
+    div#page-orphanage-map{
+        flex-direction: column; /* one above another */
+    }
+    #page-orphanage-map aside{
+        width: 100%;
+        height: initial;
+        padding: 12px;
+    }
+    #page-orphanage-map aside footer{
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+    #page-orphanage-map aside header h2{
+        margin-top: 0;
+    }
+    #page-orphanage-map aside header p{
+        margin-top: 0;
+    }
+}

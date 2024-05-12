@@ -1,0 +1,88 @@
+#page-landing{ /*landing means pousar [pt-br]*/
+    background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%) no-repeat;
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center; /* align on Y-axis*/
+}
+#container{
+    width: min(90%, 112rem);
+    margin: auto; /* redundant, same as 'align-items: center'
+    It just can change the top and bottom margin when the display is flex */
+}
+.location, h1, .visit p{
+    height: 16vh;
+}
+
+#logo-header{
+    cursor: initial;
+    animation-delay: 50ms;
+}
+.location{
+    animation-delay: 100ms;
+    font-size: 2.4rem;
+    line-height: 1.5;
+}
+main h1{
+    animation-delay: 150ms;
+    font-size: clamp(4rem, 8vw, 8.6rem); /* regra com (valor mínimo, valor ideal padrão, valor máximo)*/
+    font-weight: bold;
+    line-height: .88;
+}
+.visit p{
+    animation-delay: 200ms;
+    font-size: 2.4rem;
+    line-height: 1.5;
+}
+.visit a{
+    width: 8rem;
+    height: 8rem;
+    background-color: #fdd666;
+    border: none ;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center; /* align on Y-axis*/
+    justify-content: center; /* align on X-axis*/
+    margin: auto;
+    animation-delay: 250ms;
+    transition: background .2s;
+}
+.visit a:hover{
+    background-color: #96feff;
+}
+
+/* desktop versions */
+@media (min-width: 760px){
+    #container{
+        /* padding: 5rem 2rem; */
+        /* shorthand background: image no-repeat position / size */
+        background: url("./../img/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 56rem);
+        background-size: contain;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .location, h1, .visit p {
+        height: initial;
+        text-align: initial;
+    }
+    .location{
+        text-align: right;
+    }
+    main h1{
+        margin: clamp(10%, 9vh, 12%) 0 4rem; /* 3 values: top sides bottom*/
+        width: min(300px, 80%);
+    }
+    .visit{
+        display: flex;
+        justify-content: space-between;
+    }
+    .visit p{
+        width: clamp(20rem, 20vw, 30rem);
+    }
+    .visit a{
+        margin: initial;
+    }
+}
